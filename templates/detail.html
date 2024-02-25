@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block banner %}
+
+Article Details
+
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h3 class="font-tertiary mb-3">What should be the proper purpose of UI and UX design?</h3>
+                <img src="{{ object.image.url }}" alt="post-thumb" class="img-fluid w-100 mb-3">
+                <p class="float-left mr-4 fw-bolder" class="text:">{{ object.title|title }}</p>
+                <p>{{ object.timezone }}</p>
+                <div class="content">
+                    <p>{{ object.text }}</p>
+                </div>
+                <a href="{% url 'update' object.pk %}" class="btn-primary">Update</a>
+                <a href="{% url 'delete' object.pk %}" class="btn-primary">Delete</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<br>
+<br>
+<br>
+
+{% endblock content %}

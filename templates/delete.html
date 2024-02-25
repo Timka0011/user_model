@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+
+Delete
+{% endblock %}
+{% block content%}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>{{ object.title}} o'chirishni xoxlaysizmi!?</p>
+
+    <button type="submit" class=btn-danger>HA</button>
+</form>
+
+{% endblock content %}

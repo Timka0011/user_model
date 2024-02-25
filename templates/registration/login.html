@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<h2>KIrish</h2>
+
+<div>
+
+    <form action="" method="post">
+        <div class="mb-3">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <button type="submit">Kirish</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}

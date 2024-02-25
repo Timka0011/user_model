@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+HOME
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- blog -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <br>
+                <br>
+                <br>
+                <h2>Latest News</h2>
+                <div class="section-border"></div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+
+            {% for article in object_list %}
+
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <article class="card">
+                    {% if article.image %}
+                    <img src="{{ article.image.url }}" alt="post-thumb" class="card-img-top mb-2 object-fit-cover">
+                    {% endif %}
+                    <div class="card-body p-0">
+                        <time>{{ article.timezone }}</time>
+                        <a href="{{ article.get_absolute_url }}"
+                            class="h4 card-title d-block my-3 text-dark hover-text-underline">{{ article.title|title }}</a>
+                        <a href="{{ article.get_absolute_url }}" class="btn btn-transparent">Read more</a>
+                    </div>
+                </article>
+            </div>
+
+            {% endfor %}
+
+
+
+        </div>
+    </div>
+</section>
+<!-- /blog -->
+
+
+{% endblock %}
